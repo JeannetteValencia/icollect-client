@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-//import authService from './components/services/auth-services';
+import authService from './components/auth/auth-service';
 
 import CollectionList from './components/collections/CollectionList';
 import Navbar from './components/navbar/Navbar';
 import CollectionDetails from './components/collections/CollectionDetails';
 //import ItemsDetails from './components/tasks/TaskDetails';
 
-/*import Signup from './components/auth/Signup';
+import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
-import ProtectedRoute from './components/auth/ProtectedRoute';*/
+/*import ProtectedRoute from './components/auth/ProtectedRoute';*/
 //import AddCollection from './components/collections/AddCollection';
 
 class App extends Component {
 
-  /*state = {
+  state = {
     isLoggedIn: false,
-    user: null
+    user: '',
   };
 
   getTheUser = (userObj, loggedIn) => {
@@ -50,20 +50,23 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchUser();
-  }*/
+  }
 
 
   render() {
+    console.log(this.state.user)
     return (
       <div className="App">
-        <Navbar />
+        <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />
         <Switch>
+          <Route exact path="/" render={props => <Login {...props} getUser={this.getTheUser} />} />
+          <Route exact path="/signup" render={props => <Signup {...props} getUser={this.getTheUser} />} />  
           <Route exact path="/collections/:id" component={CollectionDetails}/>
           <Route exact="/collections" component={CollectionList}/>
-          
+
 
         </Switch>
-       
+
       </div>
     );
   }
