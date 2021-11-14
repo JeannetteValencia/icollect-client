@@ -14,7 +14,7 @@ class Random extends Component{
   getSingleCollection = () => {
     const { params } = this.props.match;
     console.log({params})
-    axios.get(`http://localhost:5005/api/collections/${params.id}`)
+    axios.get(`http://localhost:5005/api/collections/${params.id}`, { withCredentials: true })
       .then( responseFromApi =>{
           const theCollection = responseFromApi.data;
           console.log(theCollection)
@@ -30,7 +30,7 @@ class Random extends Component{
   // DELETE collection:
   deleteCollection = () => {
     const { params } = this.props.match;
-    axios.delete(`http://localhost:5005/api/collections/${params.id}`)
+    axios.delete(`http://localhost:5005/api/collections/${params.id}`, { withCredentials: true })
     .then( () =>{
         this.props.history.push('/collections');
     })

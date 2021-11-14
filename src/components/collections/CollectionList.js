@@ -10,7 +10,7 @@ class CollectionList extends Component {
   state = { listOfCollections: [] }
 
   getAllCollections = () =>{
-    axios.get(`http://localhost:5005/api/collections`)
+    axios.get(`http://localhost:5005/api/collections`, { withCredentials: true })
     .then(responseFromApi => {
       this.setState({
         listOfCollections: responseFromApi.data
