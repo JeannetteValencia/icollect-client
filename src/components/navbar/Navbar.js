@@ -17,13 +17,14 @@ class Navbar extends Component {
     if (userIsLoggedIn) {
       return (
         <nav className="nav-style">
-          <ul>
-            {userIsLoggedIn && <li>Welcome, {userData.username}</li>}
+          <ul className="nav-bar-ul">
             <li>
               <Link to="/collections" style={{ textDecoration: 'none' }}>
                 Collections
               </Link>
             </li>
+            {userIsLoggedIn &&
+             <li>Welcome {userData.username}!</li>}
             <li>
               <Link to="/">
                 <button onClick={() => this.logoutUser()}>Logout</button>
@@ -36,15 +37,15 @@ class Navbar extends Component {
       return (
         <div>
           <nav className="nav-style">
-            <ul>
+            <ul className="nav-bar-ul-auth">
               <li>
                 <Link to="/" style={{ textDecoration: 'none' }}>
-                  Login
+                  Login 
                 </Link>
               </li>
               <li>
                 <Link to="/signup" style={{ textDecoration: 'none' }}>
-                  Signup
+                    Signup
                 </Link>
               </li>
             </ul>

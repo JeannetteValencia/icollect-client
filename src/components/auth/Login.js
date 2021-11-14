@@ -26,7 +26,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="auth-form-style"> 
         <form onSubmit={this.handleFormSubmit}>
           <label>
             Username:

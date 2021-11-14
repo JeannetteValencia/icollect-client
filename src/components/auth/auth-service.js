@@ -22,6 +22,11 @@ class AuthService {
     return this.service.post('/login', { username, password }).then(response => response.data);
   };
 
+  logout = () => {
+    return this.service.post('/logout', {}).then(response => response.data);
+};
+
+
 }
 
 // class AuthService is used to organize and group the methods.
