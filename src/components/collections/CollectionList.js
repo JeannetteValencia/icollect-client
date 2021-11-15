@@ -28,7 +28,6 @@ class CollectionList extends Component {
         <div style={{width: '100%'}}>
         
           { this.state.listOfCollections.map( collection => {
-            console.log(collection.owner)
             return (
               <div key={collection._id}>
                 <Link to={`/collections/${collection._id}`}>
