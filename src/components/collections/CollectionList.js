@@ -3,8 +3,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
-//import AddCollection from './AddCollection';
+import AddCollection from './AddCollection';
 
 class CollectionList extends Component {
   state = { listOfCollections: [] }
@@ -29,7 +28,7 @@ class CollectionList extends Component {
         <div style={{width: '100%'}}>
         
           { this.state.listOfCollections.map( collection => {
-            console.log(collection._id)
+            console.log(collection.owner)
             return (
               <div key={collection._id}>
                 <Link to={`/collections/${collection._id}`}>
@@ -40,9 +39,9 @@ class CollectionList extends Component {
             )})
           }
         </div>
-        {/*<div style={{width: '40%', float:"right"}}>
-            <AddCollection getData={() => this.getAllCollections()}/> {/* <== !!!
-        </div>*/}
+        <div style={{margin: '20% 20%'}}>
+            <AddCollection getData={() => this.getAllCollections()}/>
+        </div>
       </div>
     )
   }
