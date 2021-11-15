@@ -19,6 +19,7 @@ class Navbar extends Component {
         <div>
           <nav className="nav-style">
           <ul className="nav-bar-ul">
+          
             <li>
               <Link to="/collections" style={{ textDecoration: 'none' }}>
                 Collections
@@ -26,6 +27,11 @@ class Navbar extends Component {
             </li>
             {userIsLoggedIn &&
              <li>Welcome {userData.username}!</li>}
+             <li>
+              <Link to="/" style={{ textDecoration: 'none' }}>
+                HomePage
+              </Link>
+            </li>
             <li>
               <Link to="/">
                 <button onClick={() => this.logoutUser()}>Logout</button>
@@ -41,7 +47,7 @@ class Navbar extends Component {
           <nav className="nav-style">
             <ul className="nav-bar-ul-auth">
               <li>
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to="/login" style={{ textDecoration: 'none' }}>
                   Login 
                 </Link>
               </li>

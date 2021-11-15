@@ -17,6 +17,8 @@
 .nav-bar-ul{
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  align-content: center;
 }
 .nav-style{
   border: 1px solid black;
@@ -33,11 +35,13 @@
 }
 .nav-style li {
   list-style-type: none;
-  line-height: 1rem;
+  line-height: 2rem;
   background-color: #F4CDD5;
   border-radius: 5px;
-  padding: 10px;
+  border: 3px solid green;
+  padding: 5px;
   margin: 0 5px;
+  
 }
 
 .auth-form-style {
