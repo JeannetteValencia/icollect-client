@@ -10,8 +10,10 @@ import CollectionDetails from './components/collections/CollectionDetails';
 
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
-/*import ProtectedRoute from './components/auth/ProtectedRoute';*/
+import ProtectedRoute from './components/auth/ProtectedRoute';
 //import AddCollection from './components/collections/AddCollection';
+
+import Homepage from './components/Homepage/Homepage';
 
 class App extends Component {
 
@@ -65,14 +67,23 @@ class App extends Component {
       <div className="App">
         <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />
         <Switch>
-          <Route exact path="/" render={props => <Login {...props} getUser={this.getTheUser} />} />
-          <Route exact path="/signup" render={props => <Signup {...props} getUser={this.getTheUser} />} />  
-          <Route exact path="/collections/:id" component={CollectionDetails}/>
-          <Route exact="/collections" component={CollectionList}/>
-
+          <Route exact path="/" render={props => <Homepage userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn}/>} />
+          <Route exact path="/login" render={props => <Login {...props} getUser={this.getTheUser} />} />
+          <Route exact path="/signup" component={Signup} />
+          <ProtectedRoute
+            user={this.state.user}
+            exact
+            path="/collections/:id"
+            component={CollectionDetails}
+            />
+          <ProtectedRoute
+            user={this.state.user}
+            exact
+            path="/collections"
+            component={CollectionList}
+            />
 
         </Switch>
-
       </div>
     );
   }
