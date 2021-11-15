@@ -17,7 +17,7 @@ class App extends Component {
 
   state = {
     isLoggedIn: false,
-    user: '',
+    user: null
   };
 
   getTheUser = (userObj, loggedIn) => {
@@ -33,10 +33,17 @@ class App extends Component {
       authService
         .loggedin()
         .then(data => {
-          this.setState({
-            user: data,
-            isLoggedIn: true
-          });
+          if(data){
+            this.setState({
+              user: data,
+              isLoggedIn: true
+            });
+          } else {
+            this.setState({
+              user: null,
+              isLoggedIn: false
+            });
+          }
         })
         .catch(err => {
           this.setState({
@@ -54,7 +61,6 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.user)
     return (
       <div className="App">
         <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />
