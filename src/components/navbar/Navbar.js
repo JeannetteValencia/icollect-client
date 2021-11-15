@@ -16,7 +16,8 @@ class Navbar extends Component {
 
     if (userIsLoggedIn) {
       return (
-        <nav className="nav-style">
+        <div>
+          <nav className="nav-style">
           <ul className="nav-bar-ul">
             <li>
               <Link to="/collections" style={{ textDecoration: 'none' }}>
@@ -32,6 +33,7 @@ class Navbar extends Component {
             </li>
           </ul>
         </nav>
+        </div>
       );
     } else {
       return (
