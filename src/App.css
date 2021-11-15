@@ -48,3 +48,28 @@
   display: flex;
   flex-direction: row;
 }
+
+.collection-details-container{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem;
+}
+
+.details-btn-options {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem;
+
+}
+
+.form-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 3rem;
+}
+
+.form-info button{
+  border: 1px solid blue;
+  margin: 20px;
+}
+
