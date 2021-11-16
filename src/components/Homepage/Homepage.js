@@ -6,21 +6,14 @@ import React, { Component } from 'react';
 class Homepage extends Component {
 
   render() {
-    const { userIsLoggedIn } = this.props;
+    return(
+      <div>
+        <h4>iCollect</h4>
+        <h6>an App to keep track of your favourite collections!</h6>
+        <img src="/homepage.jpeg" alt="background"/>
+      </div>
+    )
 
-    if (userIsLoggedIn) {
-      return (
-        <div>
-          <h1>Welcome Back to iCollect</h1>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <h1>Welcome to iCollect</h1>
-        </div>
-      );
-    }
   }
 }
 
