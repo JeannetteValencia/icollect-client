@@ -13,7 +13,7 @@ class EditCollection extends Component {
 
     event.preventDefault();
 
-    axios.put(`http://localhost:5005/api/collections/${this.props.theCollection._id}`, { title, description }, {withCredentials: true})
+    axios.put(`${process.env.REACT_APP_API_URL}/collections/${this.props.theCollection._id}`, { title, description }, {withCredentials: true})
     .then( () => {
       // Use the passed down api call to render the updated data
         this.props.getTheCollection();

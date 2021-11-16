@@ -10,7 +10,7 @@ class AddCollection extends Component {
     event.preventDefault();
     const title = this.state.title;
     const description = this.state.description;
-    axios.post("http://localhost:5005/api/collections", { title, description }, { withCredentials: true })
+    axios.post(`${process.env.REACT_APP_API_URL}/collections`, { title, description }, { withCredentials: true })
     .then( () => {
         this.props.getData();
         this.setState({title: "", description: ""});
