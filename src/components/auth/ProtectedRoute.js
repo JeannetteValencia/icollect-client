@@ -4,8 +4,6 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 const ProtectedRoute = ({ component: Component, user, ...rest }) => {
-  console.log("this is the user>>>", { component: user });
-
   if (user) {
     return <Route {...rest} render={routeProps => <Component {...routeProps} userData={user} />} />;
   } else {

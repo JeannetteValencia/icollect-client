@@ -57,12 +57,18 @@ class Random extends Component{
           <Link to={'/collections'}>Back to Collection List</Link>
         </div>
 
-        <div>{this.renderEditForm()} </div>
+        <LikeButton/>
 
-        <div className="details-btn-options">
-          <button onClick={() => this.deleteCollection()}>Delete Collection</button>
-          <LikeButton/>
-        </div>
+        {this.props.userData._id === this.state.owner &&
+          <>
+            <div>{this.renderEditForm()} </div>
+             <div className="details-btn-options">
+
+            <button onClick={() => this.deleteCollection()}>Delete Collection</button>
+
+            </div>
+          </>
+          }
       </div>
     )
   }
