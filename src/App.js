@@ -67,20 +67,16 @@ class App extends Component {
       <div className="App">
         <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />
         <Switch>
-          <Route exact path="/" render={props => <Homepage userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn}/>} />
+          <Route exact path="/" component={Homepage}/>
           <Route exact path="/login" render={props => <Login {...props} getUser={this.getTheUser} />} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/collections" component={CollectionList}/>
           <ProtectedRoute
             user={this.state.user}
             exact
             path="/collections/:id"
-            component={CollectionDetails}
-            />
-          <ProtectedRoute
-            user={this.state.user}
-            exact
-            path="/collections"
-            component={CollectionList}
+            component={CollectionDetails} 
+            
             />
 
         </Switch>
