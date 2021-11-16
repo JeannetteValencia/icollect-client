@@ -31,3 +31,15 @@
 
 [X] Create the AddCollection.js file and import the necessary files
 [X] Create a class to display a form to create the new collection
+
+## Step 5 Changing authorisation setup
+[X]
+
+## Step 6 Protected Routes
+[X] Follow student portal to protect the rotues
+
+## Step 7 Adding Homepage button to improve user experience
+
+[X] Create the homepage component depending on the user status (login/logout)
+[X] Import the homepage component to App.js 
+[X] Call the component in the render method and pass the necessary props to display the corresponding homepage
