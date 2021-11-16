@@ -5,29 +5,34 @@ import authService from './auth-service';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
-  state = { username: '', password: '' };
+  state = { username: '', password: '', errorMsg: '' };
 
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+  
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
 
     authService.login(username, password)
       .then(response => {
-        this.setState({ username: '', password: '' });
-        this.props.getUser(response, true);
+        this.setState({ username: '', password: '', errorMsg: null });
+        if(response){
+          this.props.getUser(response, true);
+        } else {
+          this.setState({errorMsg: "Wrong credentials, try again"})
+        }
       })
       .catch(error => console.log(error));
   };
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
-
   render() {
     return (
-      <div className="auth-form-style"> 
+      <div className="auth-form-style">
         <form onSubmit={this.handleFormSubmit}>
+          {this.state.errorMsg && <p>{this.state.errorMsg}</p>}
           <label>
             Username:
             <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
