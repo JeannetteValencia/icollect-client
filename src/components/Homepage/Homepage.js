@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 class Homepage extends Component {
 
   render() {
-    const { userIsLoggedIn, userData } = this.props;
+    const { userIsLoggedIn } = this.props;
 
     if (userIsLoggedIn) {
       return (
