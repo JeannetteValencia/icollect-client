@@ -1,53 +1,65 @@
+body{
+  margin: 0;
+}
 .App {
   text-align: center;
 }
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.nav-bar-ul{
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  align-content: center;
-}
-.nav-style{
+.nav-bar{
   background-color:#A5243D;
-}
-
-.nav-style button{
-  padding: 0.5rem;
-}
-
-.nav-style a{
-  color: black;
-  text-decoration: none;
-}
-.nav-style li{
-  list-style-type: none;
-  line-height: 2rem;
-  background-color: #F4CDD5;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 0 5px;
-}
-
-.auth-form-style {
-  margin: 5rem;
-}
-
-.nav-bar-ul-auth{
+  margin: 0px;
   display: flex;
   flex-direction: row;
+}
+
+.nav-bar-options {
+  padding: 5px;
+  margin-right: 10%;
+  margin-left: 2%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+
+.nav-bar-auth-options{
+  padding: 5px;
+  margin-right: 10%;
+  margin-left: 55%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+.greetings {
+  display: flex;
+  margin-left: 50%;
+  display: flex;
+  justify-content: space-around;
+  color: #F4CDD5;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nav-bar a{
+  color: #F4CDD5;
+  text-decoration: none;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.logout{
+  color: #F4CDD5;
+  text-decoration: none;
+  background-color: #A5243D;
+  font-size: 1rem;
+  padding-top: 15px;
+}
+
+
+.nav-bar img {
+  max-height: 2rem;
+}
+.auth-form-style {
+  margin: 5rem;
 }
 
 .collection-details-container{

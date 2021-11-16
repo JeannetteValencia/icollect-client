@@ -16,48 +16,47 @@ class Navbar extends Component {
 
     if (userIsLoggedIn) {
       return (
-        <div>
-          <nav className="nav-style">
-          <ul className="nav-bar-ul">
-          
-            <li>
-              <Link to="/collections" style={{ textDecoration: 'none' }}>
+        <div className="nav-bar">
+          <div className="nav-bar-options">
+            <img src="/logo.png" alt="icollect" height='{2rem}'/>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+                  Home
+            </Link>
+
+            <Link to="/collections" style={{ textDecoration: 'none' }}>
                 Collections
-              </Link>
-            </li>
+            </Link>
+          </div>
+          <div className="greetings">
             {userIsLoggedIn &&
-             <li>Welcome {userData.username}!</li>}
-             <li>
-              <Link to="/" style={{ textDecoration: 'none' }}>
-                HomePage
+             <p>Welcome {userData.username}!</p>}
+             <Link to="/">
+                <button onClick={() => this.logoutUser()} className="logout">Logout</button>
               </Link>
-            </li>
-            <li>
-              <Link to="/">
-                <button onClick={() => this.logoutUser()}>Logout</button>
-              </Link>
-            </li>
-          </ul>
-        </nav>
+          </div>
         </div>
       );
     } else {
       return (
-        <div>
-          <nav className="nav-style">
-            <ul className="nav-bar-ul-auth">
-              <li>
-                <Link to="/login" style={{ textDecoration: 'none' }}>
-                  Login 
-                </Link>
-              </li>
-              <li>
-                <Link to="/signup" style={{ textDecoration: 'none' }}>
+        <div className="nav-bar">
+          <div className="nav-bar-options">
+            <img src="/logo.png" alt="icollect" height='{2rem}'/>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+                  Home
+            </Link>
+
+            <Link to="/collections" style={{ textDecoration: 'none' }}>
+                Collections
+            </Link>
+          </div>
+          <div className="nav-bar-auth-options">
+            <Link to="/login" style={{ textDecoration: 'none' }}>
+               Login
+            </Link>
+            <Link to="/signup" style={{ textDecoration: 'none' }}>
                     Signup
-                </Link>
-              </li>
-            </ul>
-          </nav>
+            </Link>
+          </div>
         </div>
       );
     }
