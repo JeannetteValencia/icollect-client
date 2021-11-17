@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 import { LikeButton } from '../LikeButton';
 import EditCollection from './EditCollection';
 import AddItem from '../items/AddItem';
+import ItemList from '../items/ItemList';
 
-class Random extends Component{
+class CollectionDetails extends Component{
   state = {}
 
   componentDidMount(){
@@ -20,7 +21,6 @@ class Random extends Component{
     axios.get(`${process.env.REACT_APP_API_URL}/collections/${params.id}`, { withCredentials: true })
       .then( responseFromApi =>{
           const theCollection = responseFromApi.data;
-          console.log(theCollection)
           this.setState(theCollection);
       })
       .catch((err)=>{
@@ -56,24 +56,13 @@ class Random extends Component{
 }
 
   render(){
+    console.log(this.state._id)
     return (
       <div>
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
+        <ItemList/>
         <br/>
-        {/*Show the item(s) of the collection */}
-        {this.state.items && this.state.items.length > 0 && <h3>Items of the Collection </h3>}
-
-        {this.state.items && this.state.items.map((item, index) => {
-          return (
-            <div key={index}>
-              <Link to={`/collections/${this.state._id}/items/${item._id}`}>
-                {item.title}
-              </Link>
-            </div>
-          )
-
-        })}
 
         <div className="collection-details-container">
           <Link to={'/collections'}>Back to Collection List</Link>
@@ -96,4 +85,4 @@ class Random extends Component{
 }
 
 
-export default Random;
+export default CollectionDetails;
