@@ -70,6 +70,8 @@ class CollectionDetails extends Component{
 
         <LikeButton/>
 
+        {/*Functionality only for the OWNERS of the collection*/}
+
         {this.props.userData._id === this.state.owner &&
           <>
             <div>{this.renderEditForm()} </div>
@@ -78,7 +80,8 @@ class CollectionDetails extends Component{
             </div>
             <div>{this.renderAddItemForm()} </div>
           </>
-          }
+        }
+
       </div>
     )
   }
