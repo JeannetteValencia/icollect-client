@@ -7,25 +7,24 @@ import { Link } from 'react-router-dom';
 class Login extends Component {
   state = { username: '', password: '', errorMsg: '' };
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
-
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
-
     authService.login(username, password)
       .then(response => {
         this.setState({ username: '', password: '', errorMsg: null });
         if(response){
           this.props.getUser(response, true);
-        } else {
-          this.setState({errorMsg: "Wrong credentials, try again"})
+          this.props.history.push("/");
         }
       })
-      .catch(error => console.log(error));
+
+      .catch(() => this.setState({errorMsg: "Wrong credentials, try again"}));
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   };
 
   render() {

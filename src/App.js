@@ -15,6 +15,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 //import AddCollection from './components/collections/AddCollection';
 
 import Homepage from './components/Homepage/Homepage';
+//import Footer from './components/footer/footer'
 
 class App extends Component {
 
@@ -70,8 +71,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Homepage}/>
           <Route exact path="/login" render={props => <Login {...props} getUser={this.getTheUser} />} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/collections" component={CollectionList}/>
+          <Route exact path="/signup" render={props => <Signup {...props} getUser={this.getTheUser} />} />
+          <Route exact path="/collections" render={props => <CollectionList {...props} userData={this.state.user}/>}/>
           <ProtectedRoute
             user={this.state.user}
             exact
@@ -91,6 +92,7 @@ class App extends Component {
             component={ItemDetails}
           />
         </Switch>
+        {/*<Footer/>*/}
       </div>
     );
   }
