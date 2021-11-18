@@ -29,7 +29,7 @@ class Signup extends Component {
 
   render(){
     return(
-      <div className="auth-form-style">
+      <div className="container">
         <form onSubmit={this.handleFormSubmit}>
           <label>
           Username:

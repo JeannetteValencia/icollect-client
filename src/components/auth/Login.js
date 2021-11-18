@@ -11,7 +11,7 @@ class Login extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
-  
+
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
@@ -30,7 +30,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="auth-form-style">
+      <div className="container">
         <form onSubmit={this.handleFormSubmit}>
           {this.state.errorMsg && <p>{this.state.errorMsg}</p>}
           <label>
