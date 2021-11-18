@@ -26,6 +26,7 @@
 [X] Include loggedin method in the auth-service file
 [X] Create login and logout methods and components
 [X] Incorporate Credentials to axios routes
+[X] Redirect to Homepage after Login/Sign up
 
 ## Step 4 Adding new Collections
 
@@ -33,13 +34,23 @@
 [X] Create a class to display a form to create the new collection
 
 ## Step 5 Changing authorisation setup
-[X]
+[X] Allowing no-loggedin users to see the Collection List, but not the details --> condition (comparing  if this.props.userData._id === this.state.owner )
 
 ## Step 6 Protected Routes
 [X] Follow student portal to protect the rotues
+[X] Protect the Edit Collection and Delete Collection options, so that only the OWNER can actually do this
+[X]  Protect the functionality of Adding new Collections
 
 ## Step 7 Adding Homepage button to improve user experience
 
 [X] Create the homepage component depending on the user status (login/logout)
 [X] Import the homepage component to App.js 
 [X] Call the component in the render method and pass the necessary props to display the corresponding homepage
+
+## Step 8 Updating Navbar to check App functionality among urls
+
+## Step 9 Adding items to the collections
+[X] Creating the AddItems.js file
+[X] Checking that only owners of the collection can add new items.
+
+#Reading the new Items
