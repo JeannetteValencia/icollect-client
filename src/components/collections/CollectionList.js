@@ -25,21 +25,20 @@ class CollectionList extends Component {
     return(
       <div>
         <h1>List of Collections</h1>
-        <div style={{width: '100%'}}>
+        <div style={{margin: '2% 20%'}}>
+            <AddCollection getData={() => this.getAllCollections()}/>
+        </div>
+        <div style={{width: '100%'}} className="elm-container">
         
           { this.state.listOfCollections.map( collection => {
             return (
-              <div key={collection._id}>
+              <div key={collection._id} className="collection">
                 <Link to={`/collections/${collection._id}`}>
                   <h3>{collection.title}</h3>
                 </Link>
-                {/* <p style={{maxWidth: '400px'}} >{collection.description} </p> */}
               </div>
             )})
           }
-        </div>
-        <div style={{margin: '20% 20%'}}>
-            <AddCollection getData={() => this.getAllCollections()}/>
         </div>
       </div>
     )
