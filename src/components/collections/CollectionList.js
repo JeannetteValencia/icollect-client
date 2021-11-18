@@ -25,11 +25,18 @@ class CollectionList extends Component {
     return(
       <div>
         <h1>List of Collections</h1>
-        <div style={{margin: '2% 20%'}}>
-            <AddCollection getData={() => this.getAllCollections()}/>
-        </div>
-        <div style={{width: '100%'}} className="elm-container">
         
+       {/*Protecting the functionality of Adding new Collections*/}
+        {this.props.userData &&
+          <>
+            <div style={{margin: '2% 20%'}}>
+              <AddCollection getData={() => this.getAllCollections()}/>
+            </div>
+          </>
+        }
+
+        <div style={{width: '100%'}} className="elm-container">
+
           { this.state.listOfCollections.map( collection => {
             return (
               <div key={collection._id} className="collection">
