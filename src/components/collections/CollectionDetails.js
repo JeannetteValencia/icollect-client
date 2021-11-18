@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { LikeButton } from '../LikeButton';
 import EditCollection from './EditCollection';
 import AddItem from '../items/AddItem';
-import ItemList from '../items/ItemList';
 
 class CollectionDetails extends Component{
   state = {}
@@ -44,7 +43,7 @@ class CollectionDetails extends Component{
         console.log(err)
     })
   }
-  
+
   //Render a Form to add a new item to the collection
   renderAddItemForm = () => {
     if (!this.state.title) {

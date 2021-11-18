@@ -13,7 +13,6 @@ class AddItem extends Component {
 
     axios.post(`${process.env.REACT_APP_API_URL}/items`, { title, description, collectionID }, {withCredentials: true})
     .then( (newitem) => {
-      console.log("NEW ITEM>>>>", newitem.data)
       //Display the updated list
       this.props.getTheCollection();
       this.setState({title: "", description: ""});
@@ -47,10 +46,6 @@ class AddItem extends Component {
               <input type="submit" value="Submit" />
             </form>
         </div>
-      )
-    } else {
-      return (
-        <h1>Hello!</h1>
       )
     }
   }
