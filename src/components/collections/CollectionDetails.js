@@ -17,7 +17,6 @@ class CollectionDetails extends Component{
 
   getSingleCollection = () => {
     const { params } = this.props.match;
-    console.log({params})
     axios.get(`${process.env.REACT_APP_API_URL}/collections/${params.id}`, { withCredentials: true })
       .then( responseFromApi =>{
           const theCollection = responseFromApi.data;
@@ -34,7 +33,6 @@ class CollectionDetails extends Component{
     }
 }
 
-
   // DELETE collection:
   deleteCollection = () => {
     const { params } = this.props.match;
@@ -46,7 +44,8 @@ class CollectionDetails extends Component{
         console.log(err)
     })
   }
-
+  
+  //Render a Form to add a new item to the collection
   renderAddItemForm = () => {
     if (!this.state.title) {
         this.getSingleCollection();
@@ -56,17 +55,24 @@ class CollectionDetails extends Component{
 }
 
   render(){
-    console.log(this.state._id)
     return (
       <div>
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
-        <ItemList/>
+
         <br/>
 
-        <div className="collection-details-container">
-          <Link to={'/collections'}>Back to Collection List</Link>
-        </div>
+        {/*Functionality to display only items of the collection*/}
+        {this.state.arrOfItems &&
+          this.state.arrOfItems.map( item => {
+            return (
+                <div key={item._id}>
+                  <Link to={`/items/${item._id}`}>
+                    <h3>{item.title}</h3>
+                  </Link>
+                </div>
+              )})
+        }
 
         <LikeButton/>
 
@@ -82,6 +88,9 @@ class CollectionDetails extends Component{
           </>
         }
 
+        <div className="collection-details-container">
+          <Link to={'/collections'}>Back to Collection List</Link>
+        </div>
       </div>
     )
   }
