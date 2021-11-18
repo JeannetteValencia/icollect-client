@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 class ItemDetails extends Component {
@@ -11,11 +12,9 @@ class ItemDetails extends Component {
 
   getTheItem = () => {
     const { params } = this.props.match;
-    console.log("PROPS>>>>>", this.props.match)
     axios.get(`${process.env.REACT_APP_API_URL}/items/${params.id}`, {withCredentials: true})
     .then( responseFromApi =>{
       const theItem = responseFromApi.data;
-      console.log("THE ITEM>>>", theItem)
       this.setState(theItem);
     })
     .catch((err)=>{
@@ -24,11 +23,13 @@ class ItemDetails extends Component {
   }
 
   render(){
-    console.log(this.props.match)
     return(
       <div>
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
+        <div className="collection-details-container">
+          <Link to={'/collections'}>Back to Collection List</Link>
+        </div>
       </div>
     )
   }
