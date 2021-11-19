@@ -49,10 +49,10 @@ class EditCollection extends Component {
           <h3>Edit form</h3>
           <form onSubmit={this.handleFormSubmit} className="form-info" >
             <label>Title:
-              <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)} required className="text-input"/>
+              <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChangeTitle(e)} required className="text-input"/>
             </label>
             <label>Description:
-              <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} required className="text-input"/>
+              <textarea name="description" value={this.state.description} onChange={ e => this.handleChangeDesc(e)} required className="text-input"/>
             </label>
             <button>Submit</button>
           </form>
