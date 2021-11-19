@@ -87,6 +87,8 @@ class CollectionDetails extends Component{
           </>
         }
 
+          {/*Link to return to Previous Page*/}
+
         <div className="collection-details-container">
           <Link to={'/collections'}>Back to Collection List</Link>
         </div>
