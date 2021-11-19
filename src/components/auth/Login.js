@@ -14,7 +14,7 @@ class Login extends Component {
       .then(response => {
         this.setState({ username: '', password: '', errorMsg: null });
         this.props.getUser(response, true);
-        this.props.history.push("/");
+        this.props.history.push("/collections");
       })
 
       .catch(() => this.setState({errorMsg: "Wrong credentials, try again"}));

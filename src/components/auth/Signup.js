@@ -18,7 +18,7 @@ class Signup extends Component {
             password: "",
         });
         this.props.getUser(createdUser, true);
-        this.props.history.push("/");
+        this.props.history.push("/collections");
       })
 
       .catch(() => {
