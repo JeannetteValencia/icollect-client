@@ -7,7 +7,6 @@ import CollectionList from './components/collections/CollectionList';
 import Navbar from './components/navbar/Navbar';
 import CollectionDetails from './components/collections/CollectionDetails';
 import ItemDetails from './components/items/ItemDetails';
-import ItemList from "./components/items/ItemList";
 
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
@@ -78,12 +77,6 @@ class App extends Component {
             exact
             path="/collections/:id"
             component={CollectionDetails}
-            />
-            <ProtectedRoute
-            user={this.state.user}
-            exact
-            path="/items"
-            component={ItemList}
             />
             <ProtectedRoute
             user={this.state.user}
