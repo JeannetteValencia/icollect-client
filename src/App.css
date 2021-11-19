@@ -5,14 +5,14 @@ body{
   text-align: center;
 }
 
-.nav-bar{
+.nav-bar {
   background-color:#A5243D;
   margin: 0px;
   display: flex;
   flex-direction: row;
 }
 
-.nav-bar-options {
+.nav-bar-options, .footer-options {
   padding: 5px;
   margin-right: 10%;
   margin-left: 2%;
@@ -58,6 +58,7 @@ body{
 .nav-bar img {
   max-height: 2rem;
 }
+
 .auth-form-style {
   margin: 5rem;
 }
@@ -129,10 +130,52 @@ button {
   box-shadow: 5px 5px 5px #CECCCE;
   border-radius: 15px;
   width: 90px;
-  height: 60px;
+  height: 50px;
 }
 
 .collection a{
   text-decoration: none;
   color: black;
+}
+
+.footer {
+  background-color:#A5243D;
+  margin-top: 688px;
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+
+.footer img {
+  max-height: 2rem;
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: row;
+}
+.homepage{
+  margin-top: 150px;
+  margin-left: 80px;
+  margin-bottom: 172px;
+}
+
+.homepage  img{
+  max-width: 400px;
+  max-height: 200px;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 3px 3px #CECCCE;
+}
+
+h1{
+  color: #A5243D;
 }
