@@ -87,6 +87,15 @@ body{
   flex-direction: column;
   line-height: 3rem;
   border: 2px solid #A5243D;
+  padding: 2%;
+  margin: 20px 15% 50px 15%;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px #CECCCE;
+  background-color: #EFEDEF;
+}
+
+.form-info label{
+  color: #A5243D;
 }
 
 button {
@@ -95,6 +104,8 @@ button {
   padding: 10px;
   border-radius: 10px;
   font: 1.5rem;
+  max-width: 20%;
+  margin: 10px auto;
 }
 
 .container{
@@ -121,10 +132,12 @@ button {
   margin: 100px;
 }
 
-.collection {
+.collection, .item {
   border: 2px solid #A5243D;
   padding: 5%;
-  margin: 2%;
+  margin-top: 0;
+  margin-right: 2%;
+  margin-bottom: 2%;
   text-align: center;
   align-content: center;
   box-shadow: 5px 5px 5px #CECCCE;
@@ -176,6 +189,29 @@ button {
   box-shadow: 3px 3px #CECCCE;
 }
 
-h1{
+h1, h2{
   color: #A5243D;
+}
+
+.text-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #A5243D;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.item-details{
+  border: 2px solid #A5243D;
+  padding: 5%;
+  margin: 0 auto;
+  text-align: center;
+  align-content: center;
+  box-shadow: 5px 5px 5px #CECCCE;
+  border-radius: 15px;
+  width: 90px;
+  height: 50px;
 }

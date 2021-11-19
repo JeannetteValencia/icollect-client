@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { LikeButton } from '../LikeButton';
 import EditCollection from './EditCollection';
 import AddItem from '../items/AddItem';
 
@@ -59,21 +58,21 @@ class CollectionDetails extends Component{
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
 
-        <br/>
-
         {/*Functionality to display only items of the collection*/}
-        {this.state.arrOfItems &&
-          this.state.arrOfItems.map( item => {
-            return (
-                <div key={item._id}>
-                  <Link to={`/items/${item._id}`}>
-                    <h3>{item.title}</h3>
-                  </Link>
-                </div>
-              )})
-        }
-
-        <LikeButton/>
+        <div className="elm-container">
+          {this.state.arrOfItems &&
+            this.state.arrOfItems.map( item => {
+              return (
+                  <div key={item._id} className="item">
+                    <Link to={`/items/${item._id}`}>
+                      <h3>{item.title}</h3>
+                    </Link>
+                  </div>
+                )})
+          }
+        </div>
+       
+        
 
         {/*Functionality only for the OWNERS of the collection*/}
 

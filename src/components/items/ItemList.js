@@ -26,24 +26,24 @@ class ItemList extends Component {
   }
 
   render(){
-    console.log("Items of ALL collection>>>>>>", this.state.arrOfItems)
-  
     return(
       <div>
         <h4>List of Items</h4>
-        {this.state.arrOfItems.length>0 ?
-          this.state.arrOfItems.map( item => {
-            return (
-                <div key={item._id}>
-                  <Link to={`/items/${item._id}`}>
-                    <h3>{item.title}</h3>
-                  </Link>
-                  {/* <p style={{maxWidth: '400px'}} >{collection.description} </p> */}
-                </div>
-              )})
-        : <h2>loading the list</h2>
-        }
-       
+
+        <div className="elm-container">
+          {this.state.arrOfItems.length>0 ?
+            this.state.arrOfItems.map( item => {
+              return (
+                  <div key={item._id}>
+                    <Link to={`/items/${item._id}`}>
+                      <h3>{item.title}</h3>
+                    </Link>
+                    {/* <p style={{maxWidth: '400px'}} >{collection.description} </p> */}
+                  </div>
+                )})
+          : <h2>loading the list</h2>
+          }
+        </div>
       </div>
     )
   }

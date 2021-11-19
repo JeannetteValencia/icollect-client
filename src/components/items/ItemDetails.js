@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import EditItem from './EditItem';
+import { LikeButton } from '../LikeButton';
 
 class ItemDetails extends Component {
   state = {}
@@ -44,7 +45,14 @@ class ItemDetails extends Component {
     return(
       <div>
         <h1>{this.state.title}</h1>
-        <p>{this.state.description}</p>
+
+        <div className="item-details">
+          <p>{this.state.description}</p>
+        </div>
+
+       <br/>
+       <br/>
+       <LikeButton/>
 
         <div>{this.renderEditForm()} </div>
         <div className="details-btn-options">
