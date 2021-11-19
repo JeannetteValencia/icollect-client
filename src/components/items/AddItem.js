@@ -53,8 +53,10 @@ class AddItem extends Component {
   render(){
     return(
       <div>
-            <button onClick={() => this.toggleForm()}> Add Item </button>
-            { this.showAddItemForm() }
+        <br/>
+        <br/>
+        <button onClick={() => this.toggleForm()}> Add Item </button>
+        { this.showAddItemForm() }
       </div>
     )
   }

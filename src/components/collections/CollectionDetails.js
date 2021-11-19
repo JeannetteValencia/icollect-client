@@ -80,10 +80,10 @@ class CollectionDetails extends Component{
         {this.props.userData._id === this.state.owner &&
           <>
             <div>{this.renderEditForm()} </div>
+            <div>{this.renderAddItemForm()} </div>
             <div className="details-btn-options">
               <button onClick={() => this.deleteCollection()}>Delete Collection</button>
             </div>
-            <div>{this.renderAddItemForm()} </div>
           </>
         }
 
