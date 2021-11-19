@@ -47,12 +47,14 @@ class EditItem extends Component {
       return (
         <div>
           <h3>Edit Item</h3>
-          <form onSubmit={this.handleFormSubmit}>
-            <label>Title:</label>
-            <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
-            <label>Description:</label>
-            <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
-            <input type="submit" value="Submit" />
+          <form onSubmit={this.handleFormSubmit} className="form-info" >
+            <label>Title:
+              <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)} required className="text-input"/>
+            </label>
+            <label>Description:
+              <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} required className="text-input"/>
+            </label>
+            <button>Submit</button>
           </form>
         </div>
       )

@@ -38,15 +38,12 @@ class AddCollection extends Component {
           <h4>Create a new collection</h4>
           <form onSubmit={this.handleFormSubmit} className="form-info" >
             <label>Title:
-              <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)} required/>
+              <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)} required className="text-input"/>
             </label>
             <label>Description:
-              <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} required/>
+              <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} required className="text-input"/>
             </label>
-            <label>
-              <input width='{20%}'background-color='#F4CDD5' type="submit" value="Submit" />
-            </label>
-
+            <button>Submit</button>
           </form>
         </div>
       )
