@@ -4,7 +4,8 @@ import axios from 'axios';
 class EditCollection extends Component {
   state = {
     title: this.props.theCollection.title,
-    description: this.props.theCollection.description
+    description: this.props.theCollection.description,
+    isShowing: false
   }
 
   handleFormSubmit = (event) => {
@@ -33,18 +34,38 @@ class EditCollection extends Component {
     })
   }
 
+  toggleForm = () => {
+    if(!this.state.isShowing){
+      this.setState({isShowing: true});
+    } else {
+      this.setState({isShowing: false});
+    }
+  }
+
+  showEditCollectionForm = () => {
+    if(this.state.isShowing){
+      return (
+        <div>
+          <h3>Edit form</h3>
+          <form onSubmit={this.handleFormSubmit}>
+            <label>Title:</label>
+            <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
+            <label>Description:</label>
+            <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      )
+    }
+  }
+
   render(){
-    return (
+    return(
       <div>
-        <hr />
-        <h3>Edit form</h3>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
-          <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
-          <label>Description:</label>
-          <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
-          <input type="submit" value="Submit" />
-        </form>
+        <hr/>
+        <br/>
+          <button onClick={() => this.toggleForm()}> Edit Collection </button>
+          { this.showEditCollectionForm() }
       </div>
     )
   }
