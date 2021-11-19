@@ -11,10 +11,9 @@ import ItemDetails from './components/items/ItemDetails';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-//import AddCollection from './components/collections/AddCollection';
 
 import Homepage from './components/Homepage/Homepage';
-//import Footer from './components/footer/footer'
+import Footer from './components/footer/footer'
 
 class App extends Component {
 
@@ -85,7 +84,7 @@ class App extends Component {
             component={ItemDetails}
           />
         </Switch>
-        {/*<Footer/>*/}
+        <Footer/>
       </div>
     );
   }
