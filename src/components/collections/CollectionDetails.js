@@ -30,7 +30,7 @@ class CollectionDetails extends Component{
     if (this.state.title) {
         return <EditCollection theCollection={this.state} getTheCollection={this.getSingleCollection}/>
     }
-}
+  }
 
   // DELETE collection:
   deleteCollection = () => {
@@ -51,7 +51,7 @@ class CollectionDetails extends Component{
     } else {
         return <AddItem theCollection={this.state} getTheCollection={this.getSingleCollection} />
     }
-}
+  }
 
   render(){
     return (
