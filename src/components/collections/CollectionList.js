@@ -24,7 +24,7 @@ class CollectionList extends Component {
   render(){
     return(
       <div>
-        <h2>Users' Collection</h2>
+        <h2>Our users' Collections</h2>
 
        {/*Protecting the functionality of Adding new Collections*/}
         {this.props.userData &&
