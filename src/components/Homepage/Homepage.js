@@ -1,20 +1,33 @@
 // components/navbar/Navbar.js
 
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
+import Footer from '../footer/footer';
 
 class Homepage extends Component {
 
   render() {
     return(
-      <div>
-        <h4>iCollect</h4>
-        <h6>an App to keep track of your favourite collections!</h6>
-        <img src="/homepage.jpeg" alt="background"/>
+      <>
+      <h1>Create - Follow - Learn from Collections</h1>
+      <div className="homepage-container">
+        <div className="homepage">
+          <img src="/classes.jpeg" alt="background"/>
+          <p>Improve Language Skills</p>
+        </div>
 
-        {/*<div className="homepage">
-        <img src='/homepage.jpeg' height={'750px'} width={'100%'} alt="good-coffee-mood"/>*/}
+        <div className="homepage">
+          <img src="/makefriends.jpeg" alt="background"/>
+          <p>Interact with Friends</p>
+        </div>
+
+        <div className="homepage">
+          <img src="/therapy.png" alt="background"/>
+          <p>Promote Intrapersonal Skills</p>
+        </div>
       </div>
+      <Footer/>
+      </>
+    
     )
 
   }
