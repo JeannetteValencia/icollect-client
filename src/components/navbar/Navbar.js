@@ -27,9 +27,6 @@ class Navbar extends Component {
                 Collections
             </Link>
 
-            <Link to="/items" style={{ textDecoration: 'none' }}>
-                Items
-            </Link>
           </div>
           <div className="greetings">
             {userIsLoggedIn &&
