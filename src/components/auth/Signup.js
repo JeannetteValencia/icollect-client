@@ -19,8 +19,11 @@ class Signup extends Component {
         });
         this.props.getUser(createdUser, true);
         this.props.history.push("/");
-    })
-    .catch(error => console.log(error))
+      })
+
+      .catch(() => {
+        this.setState({errorMsg: "Password needs to have at least 8 characters and must contain at least one number, one lowercase and one uppercase letter. Username must be unique."})
+      });
   }
 
   handleChange = (event) => {
@@ -39,6 +42,7 @@ class Signup extends Component {
               name="username"
               value={this.state.username}
               onChange={this.handleChange}
+              required
             />
           </label>
 
@@ -49,6 +53,7 @@ class Signup extends Component {
               name="password"
               value={this.state.password}
               onChange={this.handleChange}
+              required
             />
           </label>
 

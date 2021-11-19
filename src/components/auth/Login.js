@@ -13,10 +13,8 @@ class Login extends Component {
     authService.login(username, password)
       .then(response => {
         this.setState({ username: '', password: '', errorMsg: null });
-        if(response){
-          this.props.getUser(response, true);
-          this.props.history.push("/");
-        }
+        this.props.getUser(response, true);
+        this.props.history.push("/");
       })
 
       .catch(() => this.setState({errorMsg: "Wrong credentials, try again"}));
@@ -34,12 +32,12 @@ class Login extends Component {
           {this.state.errorMsg && <p>{this.state.errorMsg}</p>}
           <label>
             Username:
-            <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+            <input type="text" name="username" value={this.state.username} onChange={this.handleChange} required/>
           </label>
 
           <label>
             Password:
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
           </label>
 
           <button type="submit"> Login </button>
