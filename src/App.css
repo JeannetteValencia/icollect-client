@@ -117,14 +117,19 @@ button {
 .elm-container{
   display: flex;
   flex-wrap: wrap;
+  margin: 100px;
 }
 
 .collection {
-  border: 1px solid #A5243D;
+  border: 2px solid #A5243D;
   padding: 5%;
   margin: 2%;
   text-align: center;
   align-content: center;
+  box-shadow: 5px 5px 5px #CECCCE;
+  border-radius: 15px;
+  width: 90px;
+  height: 60px;
 }
 
 .collection a{
