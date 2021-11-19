@@ -21,16 +21,16 @@ class AddItem extends Component {
     }
 
   handleChange = (event) => {
-      const {name, value} = event.target;
-      this.setState({[name]: value});
+    const {name, value} = event.target;
+    this.setState({[name]: value});
   }
 
   toggleForm = () => {
-      if(!this.state.isShowing){
-          this.setState({isShowing: true});
-      } else {
-        this.setState({isShowing: false});
-      }
+    if(!this.state.isShowing){
+      this.setState({isShowing: true});
+    } else {
+      this.setState({isShowing: false});
+    }
   }
 
   showAddItemForm = () => {
